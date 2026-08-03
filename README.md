@@ -13,12 +13,12 @@
 ```text
 .
 ├─ app/
+│  └─ requirements.txt
 ├─ debug/
 ├─ proceed/
 ├─ tests/
-├─ requirements.txt
 ├─ startup.bat
-├─ run_tests.bat
+├─ run_automated_tests.bat
 └─ README.md
 ```
 
@@ -136,7 +136,7 @@ baseline 默认入口：
 ### 3.1 安装依赖
 
 ```bash
-pip install -r requirements.txt
+pip install -r app/requirements.txt
 ```
 
 ### 3.2 常用入口
@@ -156,7 +156,7 @@ startup.bat
 3. 测试入口：
 
 ```text
-run_tests.bat
+run_automated_tests.bat
 ```
 
 ## 4. 运行模式
@@ -557,7 +557,7 @@ total_score = mean(adjusted_task_score for all tasks)
 
 建议至少完成以下检查再提交：
 
-1. `run_tests.bat`
+1. `run_automated_tests.bat`
 2. `python debug/debug_pipeline.py --config debug/pipeline_debug.yml`
 3. 检查 `results/<team_id>/03_trial_records.csv` 中是否存在 `predict_validation_error`
 4. 检查 `results/<team_id>/01_task_overview.csv` 与 `00_team_overview.csv` 是否正常生成
@@ -683,7 +683,7 @@ app/Collector/Collector/receiver/virtual_receiver/data/
 
 ### 13.1 本地流程与 Docker 流程的边界
 
-1. Windows 本地完整测试仍使用 `run_tests.bat`、`debug/debug_pipeline.py` 和 `startup.bat`。
+1. Windows 本地完整测试仍使用 `run_automated_tests.bat`、`debug/debug_pipeline.py` 和 `startup.bat`。
 2. Linux Docker 评分镜像使用 `dockerfile.headless` 和 `start.sh`。
 4. Docker 镜像默认不启动本地 Algorithm，而是连接 `ALGORITHM_ADDRESS` 指向的平台统一参赛者镜像。
 5. Docker 镜像安装 `requirements-headless.txt` 中的全量运行依赖，包括 `torch` 和 `PyQt5`，避免框架或算法模块导入时缺包。
