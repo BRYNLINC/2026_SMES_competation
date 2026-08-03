@@ -2,7 +2,7 @@
 
 > [!CAUTION]
 >
-> 1. 本赛题基于https://github.com/IIN-EC-Lab-of-BUPT/BCI-ABCDEF进行二次开发得到。
+> 1. 本赛题基于 https://github.com/IIN-EC-Lab-of-BUPT/BCI-ABCDEF 进行二次开发得到。
 >
 > 2. 赛程中提供数据文件作为选手训练集，但本开源仓库不提供，可通过convert_cdt_to_dat.m或直接使用dat文件，放到app/Collector/Collector/receiver/virtual_receiver/data文件夹下，并运行VirtualReceiverConfigCreator.py重新生成config。
 
