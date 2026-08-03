@@ -3,11 +3,12 @@
 ## 1. 基本信息
 
 1. 决赛采用 `1 台裁判机 + 多台选手机` 的多机结构，裁判机统一回放数据、统一计时、统一计分、统一保存结果。
-2. 选手机只运行本队算法服务，默认必须监听本机 TCP `9981`，并能被裁判机访问。
-3. 选手主要修改范围是 `app/Algorithm`，尤其是 `app/Algorithm/Algorithm/method/model_artifacts/baseline_example/AlgorithmImplement.py`。
-4. 正式比赛的超时、得分和结果保存以裁判机为准，本机日志只用于排障。
-5. 在线阶段由裁判机统一放行，多队共享同一批 trial数据；
-6. 比赛开始前必须让算法先启动并保持连接；如果某个 task 已经开始后才接入，该 task 按 timeout 处理。
+2. 裁判机需要确认通过交换机连接选手机后，修改CentralController/CentralController/config/CentralControllerConfigCreator.py中的内容，并运行生成config, 才可以连接选手机。
+3. 选手机只运行本队算法服务，默认必须监听本机 TCP `9981`，并能被裁判机访问。
+4. 选手主要修改范围是 `app/Algorithm`，尤其是 `app/Algorithm/Algorithm/method/model_artifacts/baseline_example/AlgorithmImplement.py`。
+5. 正式比赛的超时、得分和结果保存以裁判机为准，本机日志只用于排障。
+6. 在线阶段由裁判机统一放行，多队共享同一批 trial数据；
+7. 比赛开始前必须让算法先启动并保持连接；如果某个 task 已经开始后才接入，该 task 按 timeout 处理。
 
 > [!CAUTION]
 >
