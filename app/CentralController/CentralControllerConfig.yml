@@ -1,0 +1,124 @@
+groups:
+  group_base:
+    group_base:
+      group_info: {}
+      message_key_topic_dict: {}
+  group_1:
+    group_info: {}
+    message_key_topic_dict: {}
+components:
+  team_0.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.102:9981
+      team_id: team_0
+      team_display_name: "\u9F9A\u9E23\u8D5B\u961F"
+      team_host: 10.11.11.102
+      algorithm_rpc_address: 10.11.11.102:9981
+      group_id: group_1
+      processor_component_id: team_0.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_0.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_0.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_0.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  collector_group_1:
+    component_type: COLLECTOR
+    component_info:
+      group_id: group_1
+      collector_component_id: collector_group_1
+      team_id_list:
+      - team_0
+      calibration_private_topic_by_team:
+        team_0: team_0.group_1.calibration
+      runtime_stage_event_topic: runtime_stage.event
+      runtime_stage_control_topic: runtime_stage.control
+      runtime_stage_status_topic: runtime_stage.status
+    component_group_id: group_1
+    message_key_topic_dict:
+      send_data: group_1.data
+      command_control: collector_group_1.command_control
+      external_trigger: collector_group_1.external_trigger
+      virtual_receiver_custom_control: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event: runtime_stage.event
+      runtime_stage_control: runtime_stage.control
+  stimulator_group_1:
+    component_type: STIMULATOR
+    component_info:
+      external_trigger_address: 127.0.0.1:8972
+    component_group_id: group_1
+    message_key_topic_dict:
+      command_control: stimulator_group_1.command_control
+      feedback_control: team_0.group_1.report
+      information: group_1.data
+      random_number_seeds: stimulator_group_1.random_number_seeds
+      virtual_receiver_custom_control: collector_group_1.virtual_receiver_custom_control
+  data_storage:
+    component_type: DATASTORAGE
+    component_info:
+      message:
+        group_1.data: null
+      stimulator_components:
+        stimulator_group_1: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      command_control: data_storage.command_control
+      group_1.data: group_1.data
+  database:
+    component_type: DATABASE
+    component_info:
+      message:
+        group_1.data: null
+      process_components:
+        team_0.group_1: team_0.group_1.report
+      stimulator_components:
+        stimulator_group_1: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      command_control: database.command_control
+      group_1.data: group_1.data
+      team_0.group_1.report: team_0.group_1.report
+  runtime_stage_coordinator:
+    component_type: CONTROLLER
+    component_info:
+      release_policy: AUTO_RELEASE_WHEN_ALL_TEAMS_READY
+      trial_release_interval_seconds: 1.3
+      trial_terminal_watchdog_base_timeout_seconds: 1.0
+      trial_terminal_watchdog_grace_seconds: 0.3
+      enable_runtime_stage_status: false
+      team_id_list_by_group:
+        group_1:
+        - team_0
+      runtime_stage_event_topic: runtime_stage.event
+      runtime_stage_control_topic: runtime_stage.control
+      runtime_stage_status_topic: runtime_stage.status
+      runtime_stage_ui_control_topic: runtime_stage.ui_control
+    component_group_id: group_base
+    message_key_topic_dict:
+      runtime_stage_event: runtime_stage.event
+      runtime_stage_control: runtime_stage.control
+      runtime_stage_status: runtime_stage.status
+      runtime_stage_ui_control: runtime_stage.ui_control
+  central_controller:
+    component_type: CONTROLLER
+    component_info:
+      message:
+        collector_group_1.command_control: null
+        stimulator_group_1.command_control: null
+        stimulator_group_1.random_number_seeds: null
+        data_storage.command_control: null
+        database.command_control: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      collector_group_1.command_control: collector_group_1.command_control
+      stimulator_group_1.command_control: stimulator_group_1.command_control
+      stimulator_group_1.random_number_seeds: stimulator_group_1.random_number_seeds
+      data_storage.command_control: data_storage.command_control
+      database.command_control: database.command_control

@@ -1,0 +1,38 @@
+# 初始化配置信息
+# ------------------------------------------------------------
+# 这个文件只是 ProcessHub 单组件本地启动时的默认配置。
+#
+# 它的作用：
+# 1. 方便你单独启动一个 PROCESSOR 做本地调试；
+# 2. 给没有中央配置注入时提供一个兜底 component_id / team_id / group_id。
+#
+# 它不是“多赛队正式总配置”的来源。
+# 多赛队、组别、collector/coordinator 联动关系，统一以
+# CentralController/config/CentralControllerConfigCreator.py 生成的
+# CentralController/config/CentralControllerConfig.yml 为准。
+# ------------------------------------------------------------
+component:
+  # 组件ID遵循如下规则：
+  # 1.如果环境变量中存在COMPONENT_ID字段，则优先使用环境变量中定义的ID
+  # 2.如果环境变量中未找到COMPONENT_ID字段，则检查配置文件中的component_id
+  # 3.如果环境变量和配置文件都未提供component_id，则根据component_type字段自动生成component_type+随机uuid作为component_id
+  component_id:
+  component_type: PROCESSOR # 可自定义，比赛中限制为 PROCESSOR/STIMULATOR/COLLECTOR/MONITOR/CONTROLLER/DATASTORAGE/DATABASE
+  component_info:
+    # 这里保留单个默认队伍，仅供“单独拉起一个 ProcessHub”时使用。
+    # 如果是正式多队运行，请不要在这里扩队，而应修改 CentralControllerConfigCreator.py。
+    team_id: team_0
+    # 本地默认只挂在 group_1。
+    group_id: group_1
+    processor_component_id: team_0.group_1
+    collector_component_id: collector_group_1
+    collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+    runtime_stage_event_topic: runtime_stage.event
+
+orchestrator:
+#  orchestrator_class_file: ProcessHub/orchestrator/direct_connection_orchestrator/DirectConnectionOrchestrator.py
+#  orchestrator_class_name: DirectConnectionOrchestrator
+  orchestrator_class_file: ProcessHub/bci_competition/orchestrator/bci_competition_orchestrator/BciCompetitionOrchestrator.py
+  orchestrator_class_name: BciCompetitionOrchestrator
+
+

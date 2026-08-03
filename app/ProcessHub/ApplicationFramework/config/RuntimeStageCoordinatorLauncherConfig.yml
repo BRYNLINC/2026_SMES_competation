@@ -1,0 +1,8 @@
+version: 1
+
+application:
+  # 独立启动 runtime stage 协调组件。
+  # startup.bat 会通过 LAUNCHER_CONFIG_PATH 指向这个 launcher 配置。
+  application_class_file: RuntimeStageCoordinator/application/ApplicationImplement.py
+  application_class_name: ApplicationImplement
+

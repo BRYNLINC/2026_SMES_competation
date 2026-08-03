@@ -1,0 +1,13 @@
+version: 1
+task:
+  task_class_file: ProcessHub/bci_competition/task/BCICompetitionTaskFinal.py
+  task_class_name: BCICompetitionTaskFinal
+
+algorithm_connection:
+  address: 'localhost:9981'
+  max_connection_timeout: 8000
+
+component_info:
+  team_name: null
+  algorithm_number: null
+  ip: null

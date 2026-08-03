@@ -1,0 +1,14 @@
+collector:
+  source_label: eeg_1
+  exp_name: vmi
+  calibrate_trials_per_class: 10 # 每类校准试次数量, debug时可适当减少以缩短调试时间， 比赛时系统会固定为10
+  virtual_receiver_config_path: app/Collector/Collector/receiver/virtual_receiver/VirtualReceiverConfig.yml
+
+algorithm:
+  address: debug://local-algorithm
+  config_path: app/Algorithm/Algorithm/config/AlgorithmConfig.yml
+
+runtime:
+  timeout_seconds: 99999999
+  max_data_packages: 9999999 # 算法处理数据包数量上限, 限制debug时间
+  patch_score_http: true

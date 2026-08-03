@@ -1,0 +1,27 @@
+component:
+  component_id: runtime_stage_coordinator
+  component_type: CONTROLLER
+  component_info:
+    # 当前阶段默认自动放行:
+    # 只要同组全部赛队 ready，协调器就自动放行 online 与后续 trial。
+    release_policy: AUTO_RELEASE_WHEN_ALL_TEAMS_READY
+    trial_release_interval_seconds: 1.3
+    # 组级 trial 终态 watchdog 只兜底放行屏障，不改变 ProcessHub 内部判题 timeout。
+    # 当前 MI timeout_limit=1.0s，grace=0.3s，因此组级兜底点为 trial_sent+1.3s。
+    trial_terminal_watchdog_base_timeout_seconds: 1.0
+    trial_terminal_watchdog_grace_seconds: 0.3
+    # runtime_stage_status 仅为后续 UI / 外部监控预留。
+    # 当前决赛主链默认关闭，避免额外走一条非关键消息发送链路。
+    enable_runtime_stage_status: false
+    # 中心配置生成后会把 group -> team_id_list 填到这里。
+    # 本地这个 yml 只保留空字典占位，真正运行期由 CentralControllerConfig.yml 覆盖。
+    team_id_list_by_group: {}
+    runtime_stage_event_topic: runtime_stage.event
+    runtime_stage_control_topic: runtime_stage.control
+    runtime_stage_status_topic: runtime_stage.status
+    # MANUAL_RELEASE_FROM_UI 对应的控制 topic 先预留。
+    # 后续如接外部 UI，再显式启用。
+    runtime_stage_ui_control_topic: runtime_stage.ui_control
+
+
+

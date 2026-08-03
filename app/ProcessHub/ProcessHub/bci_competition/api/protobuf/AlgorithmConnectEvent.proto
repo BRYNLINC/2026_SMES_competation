@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ProcessHub.api.protobuf;
+
+
+
+message AlgorithmConnectClosedEventMessage {
+  string address = 1;
+}
+
+message AlgorithmConnectEventMessage {
+  oneof package {
+    AlgorithmConnectClosedEventMessage algorithmConnectClosedEventMessage = 1;
+  }
+}

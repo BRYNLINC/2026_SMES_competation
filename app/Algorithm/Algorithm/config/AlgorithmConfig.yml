@@ -1,0 +1,39 @@
+connection:
+  rpc_address: '[::]:9981'
+
+method:
+  # 正式运行时 method/sources/source_receiver_handlers 全部由框架代码锁定，
+  # 这里保留固定值仅作为文档展示，不作为选手可修改入口。
+  method_class_file: Algorithm/method/model_artifacts/baseline_example/AlgorithmImplement.py
+  method_class_name: AlgorithmImplement
+
+
+sources:  # 正式运行时固定为 eeg_1 连续数据源，此处仅展示框架默认值
+  eeg_1:
+    source_receiver:
+      handler: continuous_data_source_receiver
+      configuration:
+        chunk_size: 4000
+        device_information_wait_timeout_seconds: 0.0
+        calibration_object_wait_timeout_seconds: 0.0
+        calibration_chunk_assembly_timeout_seconds: 15.0
+
+
+
+source_receiver_handlers:
+   # 正式运行时固定使用 continuous_data_source_receiver，此处仅展示框架默认值
+  continuous_data_source_receiver:
+    receiver_class_file: Algorithm/service/SourceReceiver/ContinuousDataSourceReceiver.py
+    receiver_class_name: ContinuousDataSourceReceiver
+
+#  image_data_source_receiver:
+#    receiver_class_file: null
+#    receiver_class_name: null
+#
+#  command_data_source_receiver:
+#    receiver_class_file: null
+#    receiver_class_name: null
+
+  # 其他接收器定义不会在正式运行时生效
+  # receiver_class_file
+  # receiver_class_name

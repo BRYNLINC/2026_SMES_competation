@@ -1,0 +1,41 @@
+
+sources:
+  # 数据源配置信息，此处为challenge端订阅的数据源及topic列表，当算法请求数据源时，将根据下列数据源信息转发对应数据源
+  # 赛题端数据源需包含所有算法端数据源，以便进行转发，但也可以进一步添加其他数据源用于成绩评估等任务
+  # 按照message_key:topic形式，如果topic为空，则由中控服务器分配
+  eeg_1_calibration_private: null
+  eeg_1_online_shared: null
+  hidden_score: private.hidden_score
+
+challenge_to_algorithm_config:  # 发送给算法端提供的参数信息；predict_timeout_seconds 会在代码中由裁判侧强制注入
+  triggers:
+    1: 'left'
+    2: 'right'
+    3: 'rest'
+
+score_config:
+  task_baseline_score:
+    vme_left_vs_rest: 0.0
+    vme_right_vs_rest: 0.0
+    vmi_left_vs_rest: 0.0
+    vmi_right_vs_rest: 0.0
+  accuracy_score_max: 80.0
+  accuracy_stability_penalty_lambda: 0.5
+  reaction_time_score_max: 2.0
+  reaction_time_reference_ms: 1000.0
+  channel_score_max: 8.0
+  channel_reference_count: 8
+  calibration_score_max: 7.0
+  calibration_reference_trials_per_class: 10
+  model_size_score_max: 3.0
+  model_size_reference_mb: 150.0
+  timeout_predict_label: 'wrong'
+
+strategy_config:
+  timeout_setting:
+    timeout_trigger: # 超时触发器名称，可任意设置
+      source_label: eeg_1 # 超时数据源
+      timeout_limit: 1.0  # 超时时间(秒)
+      timeout_predict_label: 'wrong'
+      timeout_trigger_events: # 超时触发事件
+        '241':

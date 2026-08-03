@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "Common/protobuf/CommonMessage.proto";
+package Collector.receiver.virtual_receiver.api.protobuf;
+
+
+message CalibrationTrialCountControlMessage {
+  string teamId = 1;
+  uint32 calibrationTrialCountPerClass = 2;
+}
+
+
+//自定义控制信息，转成二进制流存入CustomControlMessage中
+message VirtualReceiverCustomControlMessage {
+  oneof package {
+    Common.protobuf.InformationPackage virtualReceiverStartSendingPointMessage = 1;
+    CalibrationTrialCountControlMessage calibrationTrialCountControlMessage = 2;
+  }
+}
+

@@ -1,0 +1,145 @@
+message:
+  virtual_receiver_custom_control: null
+send_config:
+  send_package_points: 4000
+  online_replay_mode: burst
+device_info:
+  channel_number: 64
+  sample_rate: 1000
+  channel_label:
+    FP1: null
+    FPZ: null
+    FP2: null
+    AF3: null
+    AF4: null
+    F7: null
+    F5: null
+    F3: null
+    F1: null
+    FZ: null
+    F2: null
+    F4: null
+    F6: null
+    F8: null
+    FT7: null
+    FC5: null
+    FC3: null
+    FC1: null
+    FCZ: null
+    FC2: null
+    FC4: null
+    FC6: null
+    FT8: null
+    T7: null
+    C5: null
+    C3: null
+    C1: null
+    CZ: null
+    C2: null
+    C4: null
+    C6: null
+    T8: null
+    M1: null
+    TP7: null
+    CP5: null
+    CP3: null
+    CP1: null
+    CPZ: null
+    CP2: null
+    CP4: null
+    CP6: null
+    TP8: null
+    M2: null
+    P7: null
+    P5: null
+    P3: null
+    P1: null
+    PZ: null
+    P2: null
+    P4: null
+    P6: null
+    P8: null
+    PO7: null
+    PO5: null
+    PO3: null
+    POZ: null
+    PO4: null
+    PO6: null
+    PO8: null
+    CB1: null
+    O1: null
+    OZ: null
+    O2: null
+    CB2: null
+  other_information:
+    aux_channel_alias:
+    - HEO
+    - VEO
+    - EKG
+    - EMG
+    trigger_channel_alias:
+    - TRIGGER
+    - TRIG
+    - STATUS
+    - EVENT
+    - MARKER
+    - STI014
+    exp_task_order:
+    - left_vs_rest
+    - right_vs_rest
+data_files:
+  sub_15:
+    vme:
+    - Collector/receiver/virtual_receiver/data/sub_15/session1/sub016_sub_15_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session1/sub016_sub_15_vme_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session2/sub016_sub_15_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session2/sub016_sub_15_vme_run2.dat
+    vmi:
+    - Collector/receiver/virtual_receiver/data/sub_15/session1/sub016_sub_15_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session1/sub016_sub_15_vmi_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session2/sub016_sub_15_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_15/session2/sub016_sub_15_vmi_run2.dat
+  sub_16:
+    vme:
+    - Collector/receiver/virtual_receiver/data/sub_16/session1/sub017_sub_16_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session1/sub017_sub_16_vme_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session2/sub017_sub_16_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session2/sub017_sub_16_vme_run2.dat
+    vmi:
+    - Collector/receiver/virtual_receiver/data/sub_16/session1/sub017_sub_16_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session1/sub017_sub_16_vmi_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session2/sub017_sub_16_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_16/session2/sub017_sub_16_vmi_run2.dat
+  sub_17:
+    vme:
+    - Collector/receiver/virtual_receiver/data/sub_17/session1/sub010_sub_17_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session1/sub010_sub_17_vme_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session2/sub010_sub_17_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session2/sub010_sub_17_vme_run2.dat
+    vmi:
+    - Collector/receiver/virtual_receiver/data/sub_17/session1/sub010_sub_17_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session1/sub010_sub_17_vmi_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session2/sub010_sub_17_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_17/session2/sub010_sub_17_vmi_run2.dat
+  sub_18:
+    vme:
+    - Collector/receiver/virtual_receiver/data/sub_18/session1/sub002_sub_18_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session1/sub002_sub_18_vme_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session2/sub002_sub_18_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session2/sub002_sub_18_vme_run2.dat
+    vmi:
+    - Collector/receiver/virtual_receiver/data/sub_18/session1/sub002_sub_18_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session1/sub002_sub_18_vmi_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session2/sub002_sub_18_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_18/session2/sub002_sub_18_vmi_run2.dat
+  sub_19:
+    vme:
+    - Collector/receiver/virtual_receiver/data/sub_19/session1/sub012_sub_19_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session1/sub012_sub_19_vme_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session2/sub012_sub_19_vme_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session2/sub012_sub_19_vme_run2.dat
+    vmi:
+    - Collector/receiver/virtual_receiver/data/sub_19/session1/sub012_sub_19_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session1/sub012_sub_19_vmi_run2.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session2/sub012_sub_19_vmi_run1.dat
+    - Collector/receiver/virtual_receiver/data/sub_19/session2/sub012_sub_19_vmi_run2.dat

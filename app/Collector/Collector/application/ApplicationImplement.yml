@@ -1,0 +1,54 @@
+# 初始化配置信息
+# ------------------------------------------------------------
+# 这个文件只是 Collector 单组件本地启动时的默认配置。
+#
+# 它的作用：
+# 1. 方便你单独启动 Collector / VirtualReceiver 做本地调试；
+# 2. 在没有 CentralController 注入总配置时，提供一个最小可运行的 group/team 兜底值。
+#
+# 它不是正式多队总配置来源。
+# 正式比赛或多队联调时，请优先修改：
+# CentralController/config/CentralControllerConfigCreator.py
+# 然后重新生成 CentralController/config/CentralControllerConfig.yml。
+# ------------------------------------------------------------
+component:
+  # 组件ID遵循如下规则：
+  # 1.如果在配置文件中写入，则优先使用配置文件定义的ID
+  # 2.如果配置文件中未写入，则检查环境变量中COMPONENT_ID字段，如果存在则使用环境变量中定义的ID
+  # 3.如果环境变量中未找到COMPONENT_ID字段，则根据component_type字段自动生成component_type+随机uuid作为component_id
+  component_id: collector_group_1
+  component_type: COLLECTOR # 可自定义，比赛中限制为 PROCESSOR/STIMULATOR/COLLECTOR/MONITOR/CONTROLLER/DATASTORAGE/DATABASE
+  component_info:
+    # 这里保留 group_1，是本地默认 collector 所属组。
+    group_id: group_1
+    collector_component_id: collector_group_1
+    # 这里的 team_id_list 仅用于本地单 Collector 调试。
+    # 正式多队运行时，真正生效的是 CentralController 总配置里生成的 collector_group_1.team_id_list。
+    team_id_list:
+      - team_0
+    # calibration_private_topic_by_team 表示：
+    # 当前 collector 在校准阶段分别给哪些队伍发私有数据。
+    # 本地调试只保留 team_0，正式多队时会在 CentralController 总配置中自动展开为全部队伍。
+    calibration_private_topic_by_team:
+      team_0: team_0.group_1.calibration
+    runtime_stage_event_topic: runtime_stage.event
+    runtime_stage_control_topic: runtime_stage.control
+    runtime_stage_status_topic: runtime_stage.status
+    external_trigger_rpc_address: '[::]:8972'
+    data_sender:
+#      data_sender_class_file: Collector/datasender/FinalModeDataSender.py
+#      data_sender_class_name: FinalModeDataSender
+      data_sender_class_file: Collector/datasender/TimingDataSender.py
+      data_sender_class_name: TimingDataSender
+    receiver:
+  #    receiver_class_file: Test/test_collector/NeuracleReceiverImplement_1.py
+#      receiver_class_file: Collector/receiver/neuracle/NeuracleReceiverImplement.py
+#      receiver_class_name: NeuracleReceiverImplement
+      receiver_class_file: Collector/receiver/virtual_receiver/VirtualReceiverImplement.py
+      receiver_class_name: VirtualReceiverImplement
+    message:
+      # 默认使用message_key:topic形式，如果topic为空，则由中控服务器分配
+      external_trigger: null
+      command_control: null
+      send_data: null
+

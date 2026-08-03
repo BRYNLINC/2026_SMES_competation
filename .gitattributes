@@ -1,0 +1,4 @@
+proceed/centrol/centrol.jar filter=lfs diff=lfs merge=lfs -text
+proceed/collector/collector.jar filter=lfs diff=lfs merge=lfs -text
+proceed/stimulator/stimulator.jar filter=lfs diff=lfs merge=lfs -text
+proceed/task/task.jar filter=lfs diff=lfs merge=lfs -text

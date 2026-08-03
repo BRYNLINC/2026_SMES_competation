@@ -1,0 +1,17 @@
+aiofiles==24.1.0
+fastapi==0.116.1
+future==1.0.0
+grpcio==1.69.0
+injector==0.21.0
+loguru==0.7.2
+numpy==1.26.4
+protobuf==6.30.1
+psychopy
+PyQt5==5.15.11
+PyQt5-sip==12.17.0
+pyserial==3.5
+PyYAML==6.0.2
+Requests==2.32.3
+scipy==1.15.2
+torch
+uvicorn==0.35.0

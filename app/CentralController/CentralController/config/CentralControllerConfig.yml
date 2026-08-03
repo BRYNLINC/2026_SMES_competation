@@ -1,0 +1,503 @@
+groups:
+  group_base:
+    group_base:
+      group_info: {}
+      message_key_topic_dict: {}
+  group_1:
+    group_info: {}
+    message_key_topic_dict: {}
+components:
+  team_0.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.110:9981
+      team_id: team_0
+      team_display_name: HUSTUM-BCI-SMES
+      team_host: 10.11.11.110
+      algorithm_rpc_address: 10.11.11.110:9981
+      group_id: group_1
+      processor_component_id: team_0.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_0.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_0.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_0.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_1.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.105:9981
+      team_id: team_1
+      team_display_name: TJU_baseline
+      team_host: 10.11.11.105
+      algorithm_rpc_address: 10.11.11.105:9981
+      group_id: group_1
+      processor_component_id: team_1.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_1.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_1.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_1.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_2.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.111:9981
+      team_id: team_2
+      team_display_name: "\u5BB6\u4E2D\u65E0\u798F\u8D35, \u53E3\u888B\u65E0\u8D22\
+        \u5B9D"
+      team_host: 10.11.11.111
+      algorithm_rpc_address: 10.11.11.111:9981
+      group_id: group_1
+      processor_component_id: team_2.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_2.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_2.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_2.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_3.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.102:9981
+      team_id: team_3
+      team_display_name: "\u7B2C\u4E03\u514B"
+      team_host: 10.11.11.102
+      algorithm_rpc_address: 10.11.11.102:9981
+      group_id: group_1
+      processor_component_id: team_3.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_3.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_3.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_3.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_4.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.103:9981
+      team_id: team_4
+      team_display_name: CNN is all you need
+      team_host: 10.11.11.103
+      algorithm_rpc_address: 10.11.11.103:9981
+      group_id: group_1
+      processor_component_id: team_4.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_4.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_4.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_4.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_5.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.104:9981
+      team_id: team_5
+      team_display_name: MindLink
+      team_host: 10.11.11.104
+      algorithm_rpc_address: 10.11.11.104:9981
+      group_id: group_1
+      processor_component_id: team_5.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_5.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_5.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_5.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_6.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.107:9981
+      team_id: team_6
+      team_display_name: UM-HUST-SMES-MI
+      team_host: 10.11.11.107
+      algorithm_rpc_address: 10.11.11.107:9981
+      group_id: group_1
+      processor_component_id: team_6.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_6.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_6.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_6.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_7.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.108:9981
+      team_id: team_7
+      team_display_name: "\u4E00\u5FF5\u901A\u5929"
+      team_host: 10.11.11.108
+      algorithm_rpc_address: 10.11.11.108:9981
+      group_id: group_1
+      processor_component_id: team_7.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_7.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_7.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_7.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_8.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.109:9981
+      team_id: team_8
+      team_display_name: "\u711A\u5929\u88C2\u6E0A\u5BC2\u706D\u6050\u60E7\u6218\u9A6C"
+      team_host: 10.11.11.109
+      algorithm_rpc_address: 10.11.11.109:9981
+      group_id: group_1
+      processor_component_id: team_8.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_8.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_8.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_8.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_9.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.112:9981
+      team_id: team_9
+      team_display_name: YSUBCI
+      team_host: 10.11.11.112
+      algorithm_rpc_address: 10.11.11.112:9981
+      group_id: group_1
+      processor_component_id: team_9.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_9.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_9.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_9.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_10.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.113:9981
+      team_id: team_10
+      team_display_name: "\u5143\u601D\u79D1\u6280"
+      team_host: 10.11.11.113
+      algorithm_rpc_address: 10.11.11.113:9981
+      group_id: group_1
+      processor_component_id: team_10.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_10.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_10.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_10.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_11.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.115:9981
+      team_id: team_11
+      team_display_name: medii2
+      team_host: 10.11.11.115
+      algorithm_rpc_address: 10.11.11.115:9981
+      group_id: group_1
+      processor_component_id: team_11.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_11.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_11.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_11.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_12.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.116:9981
+      team_id: team_12
+      team_display_name: "\u8111\u673A\u89E3\u7801\u961F2"
+      team_host: 10.11.11.116
+      algorithm_rpc_address: 10.11.11.116:9981
+      group_id: group_1
+      processor_component_id: team_12.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_12.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_12.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_12.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_13.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.118:9981
+      team_id: team_13
+      team_display_name: "\u968F\u4FBF\u90FD\u884C\u961F"
+      team_host: 10.11.11.118
+      algorithm_rpc_address: 10.11.11.118:9981
+      group_id: group_1
+      processor_component_id: team_13.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_13.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_13.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_13.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  team_14.group_1:
+    component_type: PROCESSOR
+    component_info:
+      algorithm_connection:
+        address: 10.11.11.119:9981
+      team_id: team_14
+      team_display_name: Physics-BCI
+      team_host: 10.11.11.119
+      algorithm_rpc_address: 10.11.11.119:9981
+      group_id: group_1
+      processor_component_id: team_14.group_1
+      collector_component_id: collector_group_1
+      collector_custom_control_topic: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event_topic: runtime_stage.event
+    component_group_id: group_1
+    message_key_topic_dict:
+      report: team_14.group_1.report
+      eeg_1: group_1.data
+      eeg_1_calibration_private: team_14.group_1.calibration
+      eeg_1_online_shared: group_1.data
+      command_control: team_14.group_1.command_control
+      runtime_stage_event: runtime_stage.event
+  collector_group_1:
+    component_type: COLLECTOR
+    component_info:
+      group_id: group_1
+      collector_component_id: collector_group_1
+      team_id_list:
+      - team_0
+      - team_1
+      - team_2
+      - team_3
+      - team_4
+      - team_5
+      - team_6
+      - team_7
+      - team_8
+      - team_9
+      - team_10
+      - team_11
+      - team_12
+      - team_13
+      - team_14
+      calibration_private_topic_by_team:
+        team_0: team_0.group_1.calibration
+        team_1: team_1.group_1.calibration
+        team_2: team_2.group_1.calibration
+        team_3: team_3.group_1.calibration
+        team_4: team_4.group_1.calibration
+        team_5: team_5.group_1.calibration
+        team_6: team_6.group_1.calibration
+        team_7: team_7.group_1.calibration
+        team_8: team_8.group_1.calibration
+        team_9: team_9.group_1.calibration
+        team_10: team_10.group_1.calibration
+        team_11: team_11.group_1.calibration
+        team_12: team_12.group_1.calibration
+        team_13: team_13.group_1.calibration
+        team_14: team_14.group_1.calibration
+      runtime_stage_event_topic: runtime_stage.event
+      runtime_stage_control_topic: runtime_stage.control
+      runtime_stage_status_topic: runtime_stage.status
+    component_group_id: group_1
+    message_key_topic_dict:
+      send_data: group_1.data
+      command_control: collector_group_1.command_control
+      external_trigger: collector_group_1.external_trigger
+      virtual_receiver_custom_control: collector_group_1.virtual_receiver_custom_control
+      runtime_stage_event: runtime_stage.event
+      runtime_stage_control: runtime_stage.control
+  stimulator_group_1:
+    component_type: STIMULATOR
+    component_info:
+      external_trigger_address: 127.0.0.1:8972
+    component_group_id: group_1
+    message_key_topic_dict:
+      command_control: stimulator_group_1.command_control
+      feedback_control: team_0.group_1.report
+      information: group_1.data
+      random_number_seeds: stimulator_group_1.random_number_seeds
+      virtual_receiver_custom_control: collector_group_1.virtual_receiver_custom_control
+  data_storage:
+    component_type: DATASTORAGE
+    component_info:
+      message:
+        group_1.data: null
+      stimulator_components:
+        stimulator_group_1: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      command_control: data_storage.command_control
+      group_1.data: group_1.data
+  database:
+    component_type: DATABASE
+    component_info:
+      message:
+        group_1.data: null
+      process_components:
+        team_0.group_1: team_0.group_1.report
+        team_1.group_1: team_1.group_1.report
+        team_2.group_1: team_2.group_1.report
+        team_3.group_1: team_3.group_1.report
+        team_4.group_1: team_4.group_1.report
+        team_5.group_1: team_5.group_1.report
+        team_6.group_1: team_6.group_1.report
+        team_7.group_1: team_7.group_1.report
+        team_8.group_1: team_8.group_1.report
+        team_9.group_1: team_9.group_1.report
+        team_10.group_1: team_10.group_1.report
+        team_11.group_1: team_11.group_1.report
+        team_12.group_1: team_12.group_1.report
+        team_13.group_1: team_13.group_1.report
+        team_14.group_1: team_14.group_1.report
+      stimulator_components:
+        stimulator_group_1: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      command_control: database.command_control
+      group_1.data: group_1.data
+      team_0.group_1.report: team_0.group_1.report
+      team_1.group_1.report: team_1.group_1.report
+      team_2.group_1.report: team_2.group_1.report
+      team_3.group_1.report: team_3.group_1.report
+      team_4.group_1.report: team_4.group_1.report
+      team_5.group_1.report: team_5.group_1.report
+      team_6.group_1.report: team_6.group_1.report
+      team_7.group_1.report: team_7.group_1.report
+      team_8.group_1.report: team_8.group_1.report
+      team_9.group_1.report: team_9.group_1.report
+      team_10.group_1.report: team_10.group_1.report
+      team_11.group_1.report: team_11.group_1.report
+      team_12.group_1.report: team_12.group_1.report
+      team_13.group_1.report: team_13.group_1.report
+      team_14.group_1.report: team_14.group_1.report
+  runtime_stage_coordinator:
+    component_type: CONTROLLER
+    component_info:
+      release_policy: AUTO_RELEASE_WHEN_ALL_TEAMS_READY
+      trial_release_interval_seconds: 1.3
+      trial_terminal_watchdog_base_timeout_seconds: 1.0
+      trial_terminal_watchdog_grace_seconds: 0.3
+      enable_runtime_stage_status: false
+      team_id_list_by_group:
+        group_1:
+        - team_0
+        - team_1
+        - team_2
+        - team_3
+        - team_4
+        - team_5
+        - team_6
+        - team_7
+        - team_8
+        - team_9
+        - team_10
+        - team_11
+        - team_12
+        - team_13
+        - team_14
+      runtime_stage_event_topic: runtime_stage.event
+      runtime_stage_control_topic: runtime_stage.control
+      runtime_stage_status_topic: runtime_stage.status
+      runtime_stage_ui_control_topic: runtime_stage.ui_control
+    component_group_id: group_base
+    message_key_topic_dict:
+      runtime_stage_event: runtime_stage.event
+      runtime_stage_control: runtime_stage.control
+      runtime_stage_status: runtime_stage.status
+      runtime_stage_ui_control: runtime_stage.ui_control
+  central_controller:
+    component_type: CONTROLLER
+    component_info:
+      message:
+        collector_group_1.command_control: null
+        stimulator_group_1.command_control: null
+        stimulator_group_1.random_number_seeds: null
+        data_storage.command_control: null
+        database.command_control: null
+    component_group_id: group_base
+    message_key_topic_dict:
+      collector_group_1.command_control: collector_group_1.command_control
+      stimulator_group_1.command_control: stimulator_group_1.command_control
+      stimulator_group_1.random_number_seeds: stimulator_group_1.random_number_seeds
+      data_storage.command_control: data_storage.command_control
+      database.command_control: database.command_control
