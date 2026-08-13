@@ -793,3 +793,9 @@ docker save -o bci-preliminary-score_headless.tar bci-preliminary-score:headless
 2. 或平台要求的镜像仓库地址
 3. 数据挂载路径说明
 4. 运行所需环境变量说明
+
+# Contributors
+
+- [Norman-GM](https://github.com/Norman-GM)
+- [wchun0902-web](https://github.com/wchun0902-web)
+- [bowenliee](https://github.com/bowenliee)
